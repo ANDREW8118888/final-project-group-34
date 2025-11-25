@@ -37,9 +37,7 @@ function draw() {
         }
     }
 
-    if (
-        characterFall(character, platforms)
-    ) {
+    if (characterFall(character, platforms)) {
         character.y += 10;
     }
 
@@ -62,10 +60,7 @@ function characterFall(character, platforms) {
 }
 
 function keyPressed() {
-    if (
-        character.y + character.h === floor ||
-        character.isColliding(character, platform)
-    ) {
+    if (!characterFall(character, platforms)) {
         character.y -= 120;
     }
 }
